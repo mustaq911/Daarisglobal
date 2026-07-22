@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School ERP — Daaris Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2540;--navy-2:#0F3252;--teal:#1B6FA8;--teal-light:#2E9CCA;--cream:#F6F4EE;--paper:#FFFFFF;--ink:#14202C;--ink-soft:#4B5A67;--rule:#D9D4C6;--gold:#C79A46;}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.6}a{color:inherit}.wrap{max-width:960px;margin:0 auto;padding:0 32px}
+header{padding:22px 0;border-bottom:1px solid var(--rule);background:var(--paper)}.nav-row{display:flex;align-items:center;justify-content:space-between}.logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none}.logo-text{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-.01em}.logo-text .g{color:var(--navy)}.logo-text .d{color:var(--teal)}.tagline-small{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--ink-soft);margin-top:2px;text-transform:uppercase}nav a{font-size:14px;color:var(--ink-soft);text-decoration:none;margin-left:28px}nav a:hover{color:var(--navy)}nav a.active{color:var(--navy);font-weight:500}
+.hero{padding:80px 0 68px;background:linear-gradient(135deg,var(--paper),var(--cream));border-bottom:1px solid var(--rule)}.eyebrow,.section-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}.hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,54px);line-height:1.1;font-weight:500;color:var(--navy);margin:0 0 20px;max-width:760px}.hero p{font-size:17px;color:var(--ink-soft);max-width:700px;margin:0 0 30px}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border:1px solid var(--navy);text-decoration:none;font-size:14px;font-weight:500;border-radius:2px}.btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{background:var(--navy-2)}
+.section{padding:72px 0}.section.white{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.section h2{font-family:'Fraunces',serif;font-size:31px;font-weight:500;color:var(--navy);margin:0 0 14px}.section-intro{color:var(--ink-soft);max-width:700px;margin:0 0 36px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}.feature{background:var(--paper);padding:28px 24px}.feature-icon{width:40px;height:40px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:2px}.feature-icon svg{width:22px;height:22px}.feature h3{font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--navy);margin:0 0 8px}.feature p{font-size:14.5px;color:var(--ink-soft);margin:0}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{border-top:3px solid var(--teal);padding-top:16px}.step .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--teal);margin-bottom:8px}.step h3{font-family:'Fraunces',serif;font-size:18px;color:var(--navy);margin:0 0 7px;font-weight:500}.step p{font-size:14px;color:var(--ink-soft);margin:0}
+.security-box{background:var(--navy);color:#fff;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:40px}.security-box h2{color:#fff}.security-box p{color:rgba(255,255,255,.72)}.security-list{list-style:none;margin:0;padding:0}.security-list li{padding:10px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px}.security-list li:first-child{border-top:none}.security-list li::before{content:'—';color:var(--teal-light);margin-right:9px}
+.cta{background:var(--navy);color:#fff;padding:58px 0}.cta h2{font-family:'Fraunces',serif;font-size:30px;font-weight:500;margin:0 0 10px}.cta p{color:rgba(255,255,255,.72);max-width:600px;margin:0 0 22px}.cta .btn{border-color:#fff;color:#fff}
+footer{padding:26px 0;background:var(--navy);border-top:1px solid rgba(255,255,255,.12)}.foot-row{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.5);font-size:13px}
+@media(max-width:760px){nav{display:none}.feature-grid{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.security-box{grid-template-columns:1fr}.hero{padding:58px 0 50px}}@media(max-width:480px){.process{grid-template-columns:1fr}.wrap{padding:0 22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav-row">
+    <a class="logo-mark" href="index_updated_v3.html">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L36 13L20 20L4 13L20 6Z" fill="#1B6FA8"/><path d="M20 20L36 13V22C36 22 30 27 20 27C10 27 4 22 4 22V13L20 20Z" fill="#0B2540"/><path d="M11 17V26C11 26 14 30 20 30C26 30 29 26 29 26V17" stroke="#0B2540" stroke-width="1.4" fill="none"/></svg>
+      <div><div class="logo-text"><span class="d">Daaris</span><span class="g">Global</span></div><div class="tagline-small">Be a learner</div></div>
+    </a>
+    <nav>
+      <a href="index_updated_v3.html#services">Services</a>
+      <a href="index_updated_v3.html#about">About</a>
+      <a href="insights_updated_v3.html">Insights</a>
+      <a href="school_erp.html" class="active">School ERP</a>
+      <a href="instagram.html">Instagram</a>
+      <a href="index_updated_v3.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Digital systems for education</div>
+    <h1>A School ERP built around how your institution actually works.</h1>
+    <p>Daaris Global designs responsive school-management systems that bring admissions, academics, finance, staff, communication and reporting into one secure platform.</p>
+    <a class="btn btn-primary" href="index_updated_v3.html#contact">Request a consultation</a>
+  </div>
+</section>
+<section class="section white">
+  <div class="wrap">
+    <div class="section-label">Core capabilities</div>
+    <h2>One connected system for the whole school</h2>
+    <p class="section-intro">Modules are selected and configured according to the institution’s processes, priorities and future plans.</p>
+    <div class="feature-grid">
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 2v4M16 2v4M4 9h16"/></svg></div><h3>Admissions &amp; Registration</h3><p>Manage enquiries, applications, document checks, interviews, approvals and student onboarding.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><h3>Student Information</h3><p>Maintain student, guardian, medical, document, attendance and academic records in one place.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 5h18v14H3z"/><path d="M7 9h10M7 13h6"/></svg></div><h3>Academic Management</h3><p>Configure academic years, classes, subjects, timetables, homework, lessons and promotions.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M5 3h14v18H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Exams &amp; Report Cards</h3><p>Set assessments, enter and validate marks, apply grading rules and generate reports and transcripts.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M7 10h4M16 9v6"/></svg></div><h3>Fees &amp; Finance</h3><p>Handle fee structures, invoices, instalments, discounts, receipts, balances and collection reports.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Parent &amp; Teacher Portals</h3><p>Give authorized users access to attendance, homework, results, notices, requests and communication.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 20v-8h16v8M7 12V7a5 5 0 0 1 10 0v5"/></svg></div><h3>HR &amp; Staff Records</h3><p>Track employee profiles, leave, attendance, contracts, documents, appraisals and training records.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Library Management</h3><p>Manage catalogues, issue and return activity, reservations, overdue items and borrowing history.</p></div>
+      <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div><h3>Dashboards &amp; Reports</h3><p>View operational summaries and export admissions, attendance, academic, finance and HR reports.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">How we work</div>
+    <h2>From needs assessment to deployment</h2>
+    <p class="section-intro">We begin by understanding the school’s actual workflows before confirming modules, priorities and implementation scope.</p>
+    <div class="process">
+      <div class="step"><div class="num">01</div><h3>Discovery</h3><p>Review current processes, pain points, users, records and integration needs.</p></div>
+      <div class="step"><div class="num">02</div><h3>Solution Design</h3><p>Define modules, permissions, workflows, reports and user experience.</p></div>
+      <div class="step"><div class="num">03</div><h3>Build &amp; Test</h3><p>Develop, configure and validate the agreed system with school representatives.</p></div>
+      <div class="step"><div class="num">04</div><h3>Deploy &amp; Handover</h3><p>Support user acceptance, deployment, administrator orientation and documentation.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section white">
+  <div class="wrap">
+    <div class="security-box">
+      <div><div class="section-label" style="color:var(--teal-light)">Secure by design</div><h2>Protecting school data and controlling access</h2><p>The platform is designed to give each user access only to the information and actions appropriate to their role.</p></div>
+      <ul class="security-list"><li>Role-based access for administrators, teachers, finance, HR, parents and students</li><li>Secure password handling and encrypted web access</li><li>Audit history for critical and sensitive actions</li><li>Controlled approvals for results, admissions and financial adjustments</li><li>Validation and data-integrity controls</li><li>Responsive access from desktops, tablets and modern mobile browsers</li></ul>
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="wrap"><h2>Planning a School ERP project?</h2><p>Talk to us about your institution’s current processes, priority modules and digital-transformation goals.</p><a class="btn" href="index_updated_v3.html#contact">Contact Daaris Global</a></div>
+</section>
+<footer><div class="wrap foot-row"><span>© 2026 Daaris Global. All rights reserved.</span><span>daarisglobal.com</span></div></footer>
+</body>
+</html>
