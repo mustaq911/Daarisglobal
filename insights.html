@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Daaris Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2540;
+    --navy-2:#0F3252;
+    --teal:#1B6FA8;
+    --teal-light:#2E9CCA;
+    --cream:#F6F4EE;
+    --paper:#FFFFFF;
+    --ink:#14202C;
+    --ink-soft:#4B5A67;
+    --rule:#D9D4C6;
+    --gold:#C79A46;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans', sans-serif;line-height:1.6;}
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px;}
+
+  header{padding:22px 0;border-bottom:1px solid var(--rule);background:var(--paper);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;}
+  .logo-mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-text{font-family:'Fraunces', serif;font-size:22px;font-weight:600;letter-spacing:-0.01em;}
+  .logo-text .g{color:var(--navy);}
+  .logo-text .d{color:var(--teal);}
+  .tagline-small{font-family:'IBM Plex Mono', monospace;font-size:10px;letter-spacing:0.18em;color:var(--ink-soft);margin-top:2px;text-transform:uppercase;}
+  nav a{font-size:14px;color:var(--ink-soft);text-decoration:none;margin-left:28px;}
+  nav a:hover{color:var(--navy);}
+  nav a.active{color:var(--navy);font-weight:500;}
+
+  .page-hero{padding:64px 0 48px;}
+  .section-label{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+  .page-hero h1{font-family:'Fraunces', serif;font-weight:500;font-size:clamp(30px,4.5vw,44px);color:var(--navy);margin:0 0 16px;letter-spacing:-0.01em;}
+  .page-hero p{font-size:16px;color:var(--ink-soft);max-width:560px;margin:0;}
+
+  .article-list{padding:0 0 30px;}
+  .article-card{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:0;
+    margin-bottom:24px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+  }
+  .article-card .thumb{
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .article-card .thumb svg{width:48px;height:48px;}
+  .article-card .body{padding:28px 30px;}
+  .article-tag{font-family:'IBM Plex Mono', monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+  .article-card h3{font-family:'Fraunces', serif;font-weight:500;font-size:21px;color:var(--navy);margin:0 0 10px;}
+  .article-card p{color:var(--ink-soft);font-size:14.5px;margin:0 0 14px;}
+  .read-link{font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+  .read-link:hover{color:var(--teal);}
+
+  .divider{border:none;border-top:1px solid var(--rule);margin:70px 0 60px;}
+
+  article.full{padding:0 0 60px;}
+  article.full .meta{font-family:'IBM Plex Mono', monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+  article.full h2{font-family:'Fraunces', serif;font-weight:500;font-size:30px;color:var(--navy);margin:0 0 22px;max-width:700px;line-height:1.2;}
+  article.full h3{font-family:'Fraunces', serif;font-weight:500;font-size:19px;color:var(--navy);margin:32px 0 12px;}
+  article.full p{color:var(--ink-soft);font-size:15.5px;margin:0 0 16px;max-width:700px;}
+  article.full ul{margin:0 0 20px;padding-left:0;list-style:none;max-width:700px;}
+  article.full li{padding:9px 0;border-top:1px solid var(--rule);font-size:14.5px;color:var(--ink-soft);display:flex;gap:10px;}
+  article.full li:first-child{border-top:none;}
+  article.full li::before{content:"—";color:var(--teal);flex-shrink:0;}
+  .callout{
+    background:var(--navy);
+    color:#fff;
+    padding:24px 26px;
+    border-radius:2px;
+    max-width:700px;
+    margin:8px 0 28px;
+  }
+  .callout .label{font-family:'IBM Plex Mono', monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-light);margin-bottom:8px;}
+  .callout a{color:var(--gold);text-decoration:none;font-weight:500;}
+  .callout a:hover{text-decoration:underline;}
+  .back-top{font-size:13px;color:var(--teal);text-decoration:none;}
+
+  .contact-strip{
+    background:var(--navy);color:#fff;padding:50px 0;text-align:left;
+  }
+  .contact-strip h2{font-family:'Fraunces', serif;font-weight:500;font-size:24px;margin:0 0 8px;}
+  .contact-strip p{color:rgba(255,255,255,0.72);margin:0 0 20px;font-size:14.5px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:2px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid #fff;color:#fff;}
+  .btn:hover{background:rgba(255,255,255,0.08);}
+
+  footer{padding:26px 0;background:var(--navy);border-top:1px solid rgba(255,255,255,0.12);}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,0.5);font-size:13px;}
+
+  @media (max-width: 640px){
+    .article-card{grid-template-columns:1fr;}
+    .article-card .thumb{padding:16px;}
+    nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a class="logo-mark" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6L36 13L20 20L4 13L20 6Z" fill="#1B6FA8"/>
+        <path d="M20 20L36 13V22C36 22 30 27 20 27C10 27 4 22 4 22V13L20 20Z" fill="#0B2540"/>
+        <path d="M11 17V26C11 26 14 30 20 30C26 30 29 26 29 26V17" stroke="#0B2540" stroke-width="1.4" fill="none"/>
+      </svg>
+      <div>
+        <div class="logo-text"><span class="d">Daaris</span><span class="g">Global</span></div>
+        <div class="tagline-small">Be a learner</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="instagram.html">Instagram</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="section-label">Insights</div>
+    <h1>Notes for students, parents &amp; schools</h1>
+    <p>Short, practical reads on study pathways, admissions timing, and what to look for before committing to a program.</p>
+  </div>
+</section>
+
+<section class="article-list">
+  <div class="wrap">
+
+    <div class="article-card">
+      <div class="thumb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="body">
+        <div class="article-tag">Study abroad</div>
+        <h3>Studying medicine in Belarus: what CBSE and IGCSE students should know</h3>
+        <p>A direct look at government-university MBBS admission for Qatar-based students — entry requirements, costs, and what "no entrance exam" actually means in practice.</p>
+        <a class="read-link" href="#belarus-medicine">Read the full article →</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="thumb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="body">
+        <div class="article-tag">Exam prep</div>
+        <h3>CBSE and IGCSE exam changes: how to stay ready without the panic</h3>
+        <p>Exam boards shift schedules more often than they used to. Here's how families can build a steady prep routine that isn't derailed by every announcement.</p>
+        <a class="read-link" href="#exam-readiness">Read the full article →</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="thumb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg>
+      </div>
+      <div class="body">
+        <div class="article-tag">Admissions</div>
+        <h3>Choosing a small-class school: what "2–8 students per class" really changes</h3>
+        <p>Small cohorts sound appealing on a brochure. Here's what actually improves for a learner when class sizes shrink — and what to verify before enrolling.</p>
+        <a class="read-link" href="#small-class-admissions">Read the full article →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<article class="full wrap" id="belarus-medicine">
+  <div class="meta">Study abroad — 5 min read</div>
+  <h2>Studying medicine in Belarus: what CBSE and IGCSE students should know</h2>
+
+  <p>For many CBSE and IGCSE students in Qatar with their sights set on a medical degree, the path forward usually splits into two hard options: extremely competitive local seats, or private medical colleges at a cost few families can absorb. Government medical universities in Belarus have become a practical third option, and Gomel State Medical University is one of the more established names in that route.</p>
+
+  <h3>Why this option keeps coming up</h3>
+  <p>The appeal isn't complicated. Belarusian government medical universities run MBBS-equivalent programs taught in English, with admission processes built around academic transcripts rather than a separate entrance exam. For a student who has already done the work through Grade 12 science, that removes one of the biggest bottlenecks in the usual medical-admission process.</p>
+
+  <ul>
+    <li>No IELTS or TOEFL requirement for admission</li>
+    <li>No separate medical entrance exam — admission is transcript-based</li>
+    <li>Direct admission process, with visa issued on arrival</li>
+    <li>Tuition significantly lower than private medical colleges in most home countries</li>
+    <li>On-campus accommodation with halal food options available</li>
+    <li>Degrees recognised by MCI, PMDC and SLMC frameworks</li>
+    <li>Work and PR pathways available after graduation</li>
+  </ul>
+
+  <h3>What a family should actually verify</h3>
+  <p>None of the above is worth acting on until three things are confirmed directly with the university: that the specific degree is currently listed with the relevant medical council in the student's home country, that the university's accreditation is active for the intake year, and what the total cost looks like once accommodation, food, and visa processing are added to tuition. A quotation that only shows tuition is an incomplete picture.</p>
+
+  <p>It's also worth asking early about the licensing exam the student will eventually need to sit at home after graduating abroad — this is a separate process from university admission, and planning for it starts years before the actual exam date.</p>
+
+  <div class="callout">
+    <div class="label">Next step</div>
+    Thinking about this route for a CBSE or IGCSE student? <a href="index.html#contact">Get in touch</a> and we'll walk through the university options, timelines, and what documentation to prepare first.
+  </div>
+
+  <a class="back-top" href="#top">Back to top ↑</a>
+</article>
+
+<hr class="divider">
+
+<article class="full wrap" id="exam-readiness">
+  <div class="meta">Exam prep — 4 min read</div>
+  <h2>CBSE and IGCSE exam changes: how to stay ready without the panic</h2>
+
+  <p>Every time an exam board moves a date, cancels a session, or announces a revised syllabus, the same pattern plays out in group chats and family conversations: a wave of relief, followed a few weeks later by a scramble once the next set of dates is confirmed. That gap between "we have time now" and "the new date just dropped" is where most preparation momentum gets lost.</p>
+
+  <h3>Build the routine around the syllabus, not the calendar</h3>
+  <p>A study plan tied to a fixed exam date breaks the moment that date changes. A study plan tied to syllabus completion doesn't. Breaking each subject into topic blocks with their own internal checkpoints means a schedule shift changes the pace, not the plan itself.</p>
+
+  <h3>Treat "extra time" as consolidation, not a pause</h3>
+  <p>When exam sessions get pushed back, the instinct is to relax the pace. The stronger move is to use the additional weeks for past-paper practice and closing specific weak topics — the things that are hard to fit in during a normal, tighter timeline.</p>
+
+  <ul>
+    <li>Keep a running list of topics marked "not yet confident," updated weekly</li>
+    <li>Treat every schedule announcement as a trigger to re-check the list, not restart it</li>
+    <li>Prioritise past papers over new content once core topics are covered</li>
+    <li>Keep parents looped into progress, not just dates — it reduces last-minute pressure at home</li>
+  </ul>
+
+  <div class="callout">
+    <div class="label">Next step</div>
+    Need a subject-specific study plan that can flex with schedule changes? <a href="index.html#contact">Reach out</a> and we'll help set one up.
+  </div>
+
+  <a class="back-top" href="#top">Back to top ↑</a>
+</article>
+
+<hr class="divider">
+
+<article class="full wrap" id="small-class-admissions">
+  <div class="meta">Admissions — 4 min read</div>
+  <h2>Choosing a small-class school: what "2–8 students per class" really changes</h2>
+
+  <p>Small class sizes are one of the most common lines in a school brochure, and one of the least explained. Parents comparing options for grades 1 through 8 deserve a clearer picture of what actually shifts when a classroom goes from thirty students to under ten.</p>
+
+  <h3>What genuinely improves</h3>
+  <p>With fewer students per teacher, individual progress is easier to track in real time — not just at report-card time. Teachers can adjust pace per student rather than to the middle of the class, and quieter students get more actual speaking and participation time in a session.</p>
+
+  <h3>What to ask before enrolling</h3>
+  <p>Small class size is a structural feature, not a guarantee of quality on its own. It's worth asking specifically about teacher-to-student ratios across all subjects (not just the headline number), how progress is reported to parents — monthly reports are common, but the actual content of those reports varies a lot — and whether the curriculum is genuinely internationally benchmarked or just labelled as such.</p>
+
+  <ul>
+    <li>Confirm the class size figure applies to core subjects, not just electives</li>
+    <li>Ask for a sample monthly progress report before enrolling</li>
+    <li>Check how the curriculum maps to Cambridge or an equivalent recognised framework</li>
+    <li>Ask how the school handles a student who's ahead or behind the class average</li>
+  </ul>
+
+  <div class="callout">
+    <div class="label">Next step</div>
+    Comparing schools for grades 1–8 and want a second opinion on the options? <a href="index.html#contact">Talk to us</a>.
+  </div>
+
+  <a class="back-top" href="#top">Back to top ↑</a>
+</article>
+
+<section class="contact-strip">
+  <div class="wrap">
+    <h2>Have a question about any of this?</h2>
+    <p>Send us a message on WhatsApp or email — we're happy to point you in the right direction.</p>
+    <a class="btn" href="index.html#contact">Contact Daaris Global</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 Daaris Global. All rights reserved.</span>
+    <span>daarisglobal.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
